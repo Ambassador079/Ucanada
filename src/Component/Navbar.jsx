@@ -37,8 +37,14 @@
 
 // export default Navbar;
 
+// 
+
+
+
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ added
 import Button from "./Button";
 
 const links = [
@@ -48,6 +54,7 @@ const links = [
   { label: "Immigration", href: "/immigration" },
   { label: "Investing", href: "/investing" },
   { label: "Contact", href: "/contact" },
+  { label: "Learning", href: "/learning" },
 ];
 
 const Navbar = () => {
@@ -73,28 +80,25 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+        {/* ✅ Logo FIXED */}
+        <Link to="/" className="flex items-center gap-2 group">
           <span className="w-2 h-2 rounded-full bg-red-600 group-hover:scale-125 transition-transform duration-200" />
-          <span
-            className="text-lg font-bold text-slate-900 tracking-tight"
-            style={{ letterSpacing: "-0.02em" }}
-          >
+          <span className="text-lg font-bold text-slate-900 tracking-tight" style={{ letterSpacing: "-0.02em" }}>
             UCanada<span className="text-red-600">Life</span>
           </span>
-        </a>
+        </Link>
 
-        {/* Desktop Links */}
+        {/* ✅ Desktop Links FIXED */}
         <ul className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className="relative px-3 py-1.5 text-[13.5px] font-medium text-slate-600 hover:text-red-600 transition-colors duration-200 group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left rounded-full" />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -105,7 +109,7 @@ const Navbar = () => {
             <Button />
           </div>
 
-          {/* Hamburger — mobile only */}
+          {/* ✅ FIXED gap */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] group"
@@ -130,7 +134,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu FIXED */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -148,13 +152,13 @@ const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05, duration: 0.25 }}
                 >
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     onClick={() => setMenuOpen(false)}
                     className="block py-2.5 text-[14px] font-medium text-slate-700 hover:text-red-600 border-b border-slate-50 transition-colors duration-150"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
               <motion.li
