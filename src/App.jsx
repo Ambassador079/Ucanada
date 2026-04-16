@@ -4,6 +4,8 @@ import About from "./Pages/About";
 import Navbar from "./Component/Navbar";
 import Education from "./Pages/Education";
 import Immigration from "./Pages/Immigation";
+import Investing from "./Pages/Investment";
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/education" element={<Education />} />
         <Route path="/immigration" element={<Immigration />} />
+        <Route path="/investment" element={<Investing />} />
       </Routes>
     </Router>
   );

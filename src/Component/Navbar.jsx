@@ -52,7 +52,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Education", href: "/education" },
   { label: "Immigration", href: "/immigration" },
-  { label: "Investing", href: "/investing" },
+  { label: "Investing", href: "/investment" },
   { label: "Contact", href: "/contact" },
   { label: "Learning", href: "/learning" },
 ];
