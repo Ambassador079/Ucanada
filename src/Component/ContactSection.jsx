@@ -66,6 +66,19 @@ const contactDetails = [
     href: null,
   },
 ];
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const name = e.target[0].value;
+  const email = e.target[1].value;
+  const message = e.target[2].value;
+
+  const text = `Hello, my name is ${name}. My email is ${email}. ${message}`;
+
+  const url = `https://wa.me/15555555555?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
+};
 
 const ContactSection = () => {
   return (
@@ -152,12 +165,12 @@ const ContactSection = () => {
           </motion.div>
 
           {/* Right — Form */}
-          <motion.form
+          <motion.form  
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             className="flex flex-col gap-4 bg-white border border-slate-100 rounded-2xl p-8 shadow-sm"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             {[
               { type: "text", placeholder: "Your Name", custom: 1 },
