@@ -1,49 +1,252 @@
+// import { motion } from "framer-motion";
+// import HeroSection from "../Component/HeroSection";
+// import eduImg from "../assets/Images/education.webp"; // replace with your own image
+
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 24 },
+//   visible: (i = 0) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: { delay: i * 0.1, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+//   }),
+// };
+
+// const services = [
+//   {
+//     title: "University Admission",
+//     desc: "We help you secure admission into top Canadian universities and colleges that match your goals.",
+//   },
+//   {
+//     title: "Course Selection",
+//     desc: "Confused about what to study? We guide you in choosing the right program based on your future plans.",
+//   },
+//   {
+//     title: "Application Processing",
+//     desc: "We handle your application from start to finish — ensuring accuracy and higher success chances.",
+//   },
+//   {
+//     title: "Visa Guidance",
+//     desc: "Step-by-step support to prepare and submit a strong student visa application.",
+//   },
+// ];
+
+// const steps = [
+//   "Free consultation and profile review",
+//   "School and program selection",
+//   "Application submission",
+//   "Offer letter processing",
+//   "Visa application guidance",
+//   "Pre-departure support",
+// ];
+
+// const benefits = [
+//   "Access to top Canadian institutions",
+//   "Expert guidance at every step",
+//   "Reduced application errors",
+//   "Higher chances of visa approval",
+// ];
+
+// const Education = () => {
+//   return (
+//     <>
+//       <HeroSection
+//         title="Study in Canada"
+//         highlight="with Confidence"
+//         subtitle="We guide you from choosing the right school to securing your student visa."
+//         image={eduImg}
+//         showScroll={false}
+//       />
+
+//       {/* Services */}
+//       <section className="py-24 px-6 bg-white">
+//         <div className="max-w-5xl mx-auto">
+//           <motion.div
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true }}
+//             variants={fadeUp}
+//             className="text-center mb-14"
+//           >
+//             <span className="text-[11px] uppercase tracking-[0.18em] text-red-600 font-semibold">
+//               What We Offer
+//             </span>
+//             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
+//               Our Education Services
+//             </h2>
+//           </motion.div>
+
+//           <div className="grid sm:grid-cols-2 gap-6">
+//             {services.map((item, i) => (
+//               <motion.div
+//                 key={item.title}
+//                 custom={i}
+//                 variants={fadeUp}
+//                 initial="hidden"
+//                 whileInView="visible"
+//                 className="bg-slate-50 border border-slate-100 p-6 rounded-2xl"
+//               >
+//                 <h3 className="font-bold text-slate-800 mb-2">
+//                   {item.title}
+//                 </h3>
+//                 <p className="text-sm text-slate-500 leading-relaxed">
+//                   {item.desc}
+//                 </p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Process */}
+//       <section className="py-24 px-6 bg-slate-50">
+//         <div className="max-w-5xl mx-auto">
+//           <motion.div
+//             variants={fadeUp}
+//             initial="hidden"
+//             whileInView="visible"
+//             className="text-center mb-14"
+//           >
+//             <span className="text-[11px] uppercase tracking-[0.18em] text-red-600 font-semibold">
+//               How It Works
+//             </span>
+//             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
+//               Your Journey Step by Step
+//             </h2>
+//           </motion.div>
+
+//           <div className="grid md:grid-cols-3 gap-6">
+//             {steps.map((step, i) => (
+//               <motion.div
+//                 key={step}
+//                 custom={i}
+//                 variants={fadeUp}
+//                 initial="hidden"
+//                 whileInView="visible"
+//                 className="bg-white border border-slate-100 p-6 rounded-2xl"
+//               >
+//                 <span className="text-red-600 font-bold text-lg">
+//                   0{i + 1}
+//                 </span>
+//                 <p className="text-sm text-slate-600 mt-2">{step}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Benefits */}
+//       <section className="py-24 px-6 bg-white">
+//         <div className="max-w-5xl mx-auto text-center">
+//           <motion.div
+//             variants={fadeUp}
+//             initial="hidden"
+//             whileInView="visible"
+//             className="mb-10"
+//           >
+//             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+//               Why Choose Us
+//             </h2>
+//           </motion.div>
+
+//           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+//             {benefits.map((item, i) => (
+//               <motion.div
+//                 key={item}
+//                 custom={i}
+//                 variants={fadeUp}
+//                 initial="hidden"
+//                 whileInView="visible"
+//                 className="bg-slate-50 border border-slate-100 p-5 rounded-xl text-sm text-slate-600"
+//               >
+//                 {item}
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* CTA */}
+//       <section className="py-20 px-6 bg-slate-950 text-center">
+//         <motion.div
+//           variants={fadeUp}
+//           initial="hidden"
+//           whileInView="visible"
+//           className="max-w-xl mx-auto"
+//         >
+//           <h2 className="text-3xl font-bold text-white mb-4">
+//             Start Your Study Journey Today
+//           </h2>
+//           <p className="text-slate-400 text-sm mb-6">
+//             Book a consultation and let us guide you every step of the way.
+//           </p>
+//           <a
+//             href="/contact"
+//             className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl text-sm font-semibold"
+//           >
+//             Get Started
+//           </a>
+//         </motion.div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default Education;
+
+
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import HeroSection from "../Component/HeroSection";
-import eduImg from "../assets/Images/education.webp"; // replace with your own image
+import eduImg from "../assets/Images/education.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { delay: i * 0.1, duration: 0.55 },
   }),
 };
 
+/* DATA */
 const services = [
-  {
-    title: "University Admission",
-    desc: "We help you secure admission into top Canadian universities and colleges that match your goals.",
-  },
-  {
-    title: "Course Selection",
-    desc: "Confused about what to study? We guide you in choosing the right program based on your future plans.",
-  },
-  {
-    title: "Application Processing",
-    desc: "We handle your application from start to finish — ensuring accuracy and higher success chances.",
-  },
-  {
-    title: "Visa Guidance",
-    desc: "Step-by-step support to prepare and submit a strong student visa application.",
-  },
+  { title: "University Admission", desc: "Secure admission into top schools." },
+  { title: "Course Selection", desc: "Choose the right path for your future." },
+  { title: "Visa Guidance", desc: "Strong student visa support." },
+  { title: "Application Help", desc: "We handle your entire process." },
 ];
 
 const steps = [
-  "Free consultation and profile review",
-  "School and program selection",
-  "Application submission",
-  "Offer letter processing",
-  "Visa application guidance",
-  "Pre-departure support",
+  "Consultation",
+  "Choose School",
+  "Apply",
+  "Get Offer",
+  "Visa Process",
+  "Travel",
 ];
 
-const benefits = [
-  "Access to top Canadian institutions",
-  "Expert guidance at every step",
-  "Reduced application errors",
-  "Higher chances of visa approval",
+const stats = [
+  { value: "500+", label: "Students Placed" },
+  { value: "95%", label: "Visa Success" },
+  { value: "50+", label: "Partner Schools" },
+];
+
+const testimonials = [
+  {
+    name: "David",
+    text: "They made my Canada dream possible. Everything was smooth!",
+  },
+  {
+    name: "Sarah",
+    text: "Very professional and honest. Highly recommend.",
+  },
+];
+
+const schools = [
+  "University of Toronto",
+  "McGill University",
+  "UBC",
+  "York University",
 ];
 
 const Education = () => {
@@ -51,141 +254,135 @@ const Education = () => {
     <>
       <HeroSection
         title="Study in Canada"
-        highlight="with Confidence"
-        subtitle="We guide you from choosing the right school to securing your student visa."
+        highlight="Made Simple"
+        subtitle="From admission to visa — we guide you every step."
         image={eduImg}
         showScroll={false}
       />
 
-      {/* Services */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="text-center mb-14"
-          >
-            <span className="text-[11px] uppercase tracking-[0.18em] text-red-600 font-semibold">
-              What We Offer
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
-              Our Education Services
-            </h2>
-          </motion.div>
+      {/* SERVICES */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center mb-12">
+          <h2 className="text-3xl font-bold">Our Services</h2>
+        </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {services.map((item, i) => (
-              <motion.div
-                key={item.title}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                className="bg-slate-50 border border-slate-100 p-6 rounded-2xl"
-              >
-                <h3 className="font-bold text-slate-800 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {services.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              className="p-6 bg-slate-50 rounded-xl border"
+            >
+              <h3 className="font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-500">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            className="text-center mb-14"
-          >
-            <span className="text-[11px] uppercase tracking-[0.18em] text-red-600 font-semibold">
-              How It Works
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
-              Your Journey Step by Step
-            </h2>
-          </motion.div>
+      {/* PROCESS */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold">How It Works</h2>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {steps.map((step, i) => (
-              <motion.div
-                key={step}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                className="bg-white border border-slate-100 p-6 rounded-2xl"
-              >
-                <span className="text-red-600 font-bold text-lg">
-                  0{i + 1}
-                </span>
-                <p className="text-sm text-slate-600 mt-2">{step}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              className="bg-white p-6 rounded-xl border"
+            >
+              <span className="text-red-600 font-bold">0{i + 1}</span>
+              <p className="mt-2 text-sm">{step}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            className="mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Why Choose Us
-            </h2>
-          </motion.div>
+      {/* STATS */}
+      <section className="py-20 px-6 bg-white text-center">
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+            >
+              <h3 className="text-3xl font-bold text-red-600">
+                {stat.value}
+              </h3>
+              <p className="text-sm text-slate-500">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
-            {benefits.map((item, i) => (
-              <motion.div
-                key={item}
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                className="bg-slate-50 border border-slate-100 p-5 rounded-xl text-sm text-slate-600"
-              >
-                {item}
-              </motion.div>
-            ))}
-          </div>
+      {/* SCHOOLS */}
+      <section className="py-20 px-6 bg-slate-50 text-center">
+        <h2 className="text-3xl font-bold mb-8">
+          Partner Institutions
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {schools.map((school, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              className="px-4 py-2 bg-white border rounded-lg text-sm"
+            >
+              {school}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 px-6 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-8">
+          What Students Say
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              className="p-6 border rounded-xl bg-slate-50"
+            >
+              <p className="text-sm mb-3">"{t.text}"</p>
+              <span className="font-bold text-red-600">
+                {t.name}
+              </span>
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 px-6 bg-slate-950 text-center">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          className="max-w-xl mx-auto"
+        <h2 className="text-3xl font-bold text-white mb-4">
+          Start Your Journey
+        </h2>
+        <p className="text-slate-400 mb-6">
+          Let’s help you study in Canada the right way.
+        </p>
+        <Link
+          to="/contact"
+          className="bg-red-600 text-white px-6 py-3 rounded-xl"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Start Your Study Journey Today
-          </h2>
-          <p className="text-slate-400 text-sm mb-6">
-            Book a consultation and let us guide you every step of the way.
-          </p>
-          <a
-            href="/contact"
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl text-sm font-semibold"
-          >
-            Get Started
-          </a>
-        </motion.div>
+          Book Consultation
+        </Link>
       </section>
     </>
   );
