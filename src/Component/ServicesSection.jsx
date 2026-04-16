@@ -197,7 +197,7 @@ const Services = () => {
 
               {/* CTA */}
               <a
-                href={service.href}
+                href="/about"
                 className="flex items-center gap-1.5 text-[13px] font-semibold text-red-600 hover:text-red-700 transition-colors duration-200 w-fit group/link"
               >
                 Learn More
